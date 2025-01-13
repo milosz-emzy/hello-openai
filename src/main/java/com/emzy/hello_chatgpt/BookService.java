@@ -6,11 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
+
     private final ChatClient client;
 
     @Autowired
-    public BookService(ChatClient client) {
-        this.client = client;
+    public BookService(ChatClient.Builder client) {
+        this.client = client.build();
     }
 
     public Book getBook() {
